@@ -1,0 +1,23 @@
+.img-thumbnail{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 0px;
+}
+.rounded float-end{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+.float-end{
+    position: absolute;
+    
+    width: 500px;
+    height: 500px;
+}
+#banner-login{
+    background: linear-gradient(to right, red, blue);
+}
+#id-contenedor{
+    border: 0px;
+}
