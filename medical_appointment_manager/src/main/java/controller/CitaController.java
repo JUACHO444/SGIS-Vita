@@ -5,19 +5,17 @@
 package controller;
 
 import com.google.gson.Gson;
-import connection.DBConnection;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
+import java.sql.Time;
 
 
-
-import com.google.gson.Gson;
 import beans.Cita;
 import connection.DBConnection;
-import java.sql.Date;
-import java.text.DateFormat;
 
 /**
  *
@@ -32,8 +30,8 @@ public class CitaController implements ICitaControlller{
         DBConnection con = new DBConnection();
         String sql = "Select * from cita";
 
-        if (ordenar == true) {
-            sql += " order by genero " + orden;
+       if (ordenar == true) {
+            sql += " order by fecha_cita " + orden;
         }
 
         List<String> cita = new ArrayList<String>();
@@ -45,50 +43,32 @@ public class CitaController implements ICitaControlller{
 
             while (rs.next()) {
 
-                
-                String Cedula = rs.getString("username_paciente");
-                String paciente = rs.getString("paciente");
-                DateFormat fecha  = new 
-                Boolean asistencia = rs.getBoolean("asistencia");
+                int id_cita = rs.getInt("id_cita");
+                String username_paciente = rs.getString("username_paciente");
+                String username_medico = rs.getString("username_medico");
+                Date fecha_cita = rs.getDate("fecha_cita");
+                Time hora_cita = rs.getTime("hora_cita");
+                boolean asistencia = rs.getBoolean("asistencia");
                 String observaciones = rs.getString("observaciones");
                 boolean reprogramada = rs.getBoolean("reprogramada");
                 boolean pago_cuota = rs.getBoolean("pago_cuota");
-                Date fecha_cita;
+                
 
-                Cita cita = new Cita(paciente, "medico", fecha_cita, true, observaciones, true, true);
-                peliculas.add(gson.toJson(pelicula));
+                Cita citas = new Cita(id_cita, username_paciente, username_medico,fecha_cita, hora_cita, asistencia, observaciones, reprogramada, pago_cuota);
+                cita.add(gson.toJson(citas));
 
             }
         } catch (Exception ex) {
+            
             System.out.println(ex.getMessage());
         } finally {
             con.desconectar();
         }
 
-        return gson.toJson(peliculas);
+        return gson.toJson(cita);
 
     }
     
-     @Override
-    public String devolver(int id, String username) {
-
-        DBConnection con = new DBConnection();
-        String sql = "Delete from alquiler where id= " + id + " and username = '" 
-                + username + "' limit 1";
-
-        try {
-            Statement st = con.getConnection().createStatement();
-            st.executeQuery(sql);
-
-            this.sumarCantidad(id);
-
-            return "true";
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        } finally {
-            con.desconectar();
-        }
-
-        return "false";
-    }
+   
+     
 }

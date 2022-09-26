@@ -16,8 +16,9 @@ import controller.UsuarioController;
  */
 @WebServlet("/ServletUsuarioPedir")
 public class ServletUsuarioPedir extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,28 +27,31 @@ public class ServletUsuarioPedir extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		UsuarioController usuario = new UsuarioController();
-		
-		String username = request.getParameter("username");
-		
-		String usuarioStr = usuario.pedir(username);
-		PrintWriter out = response.getWriter();
-		out.println(usuarioStr);
-		out.flush();
-		out.close();
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        UsuarioController paciente = new UsuarioController();
+        String username_paciente = request.getParameter("username_paciente");
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+        String usuarioStr = paciente.pedir(username_paciente);
+        PrintWriter out = response.getWriter();
+        out.println(usuarioStr);
+        System.out.println("Hola"+usuarioStr);
+        out.flush();
+        out.close();
+        
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
 
 }

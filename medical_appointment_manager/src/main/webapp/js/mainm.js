@@ -35,12 +35,12 @@ async function getUsuario() {
     });
 
 }
-function getCita(ordenar, orden) {
+function getmedico(ordenar, orden) {
 
     $.ajax({
         type: "GET",
         dataType: "html",
-        url: "./ServletCitaListar",
+        url: "./ServletMedicoListar",
         data: $.param({
             ordenar: ordenar,
             orden: orden
@@ -48,20 +48,20 @@ function getCita(ordenar, orden) {
         success: function (result) {
             let parsedResult = JSON.parse(result);
             if (parsedResult != false) {
-                mostrarcitas(parsedResult);
-                mostrarpaciente(nombre);
+                mostrarmedicos(parsedResult);
+                
             } else {
                 console.log("Error recuperando los datos de las peliculas");
             }
         }
     });
 }
-function mostrarcitas(cita) {
+function mostrarmedicos(medico) {
 
     let contenido = "";
         
-    $.each(cita, function (index, citas) {
-        citas = JSON.parse(citas);
+    $.each(medico, function (index, medicos) {
+        medicos = JSON.parse(medicos);
         contenido += '<tr><th scope="row">' + citas.id_cita + '</th>' +
                 '<td>' + citas.fecha_cita + '</td>' +
                 '<td>' + citas.hora_cita + '</td>' +
@@ -83,4 +83,6 @@ function mostrarpaciente(paciente){
     
     });
 }
+
+
 

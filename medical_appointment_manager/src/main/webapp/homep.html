@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+              integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+              crossorigin="anonymous" />
+
+        <script src="js/main.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Inicio</a>
+            <div id="user-data-profile">
+                <span class="badge badge-light mr-3" id="user-saldo"></span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span id="ajustes">Ajustes </span>
+                    </button>
+                    <div class="dropdown-menu" id="main-menu">
+                        <a id="mi-perfil-btn" class="dropdown-item">Mi perfil</a>
+                        <a id="salir-btn" class="dropdown-item" href="index.html">Salir</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccione una hora</option>
+                    <option value="1">7:00 AM</option>
+                    <option value="2">7:30 AM</option>
+                    <option value="3">8:00 AM</option>
+                    <option value="3">8:30 AM</option>
+                    <option value="3">9:00 AM</option>
+                    <option value="3">9:30 AM</option>
+                    <option value="3">10:00 AM</option>
+                    <option value="3">10:30 AM</option>
+                    <option value="3">11:00 AM</option>
+                    <option value="3">11:30 AM</option>
+                    <option value="3">12:00 AM</option>
+                    <option value="3">12:30 AM</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccione el mes</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="3">Abril</option>
+                    <option value="3">Mayo</option>
+                    <option value="3">Junio</option>
+                    <option value="3">Julio</option>
+                    <option value="3">Agosto</option>
+                    <option value="3">Septiembre</option>
+                    <option value="3">Octubre</option>
+                    <option value="3">Nociembre</option>
+                    <option value="3">Diciembre</option>
+                </select>
+            </div>
+        </div>
+                <div>
+            <div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccione el dia</option>
+                    
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                    <option value="1">6</option>
+                    <option value="1">7</option>
+                    <option value="1">8</option>
+                    <option value="1">9</option>
+                    <option value="1">10</option>
+                    <option value="1">11</option>
+                    <option value="1">12</option>
+                    <option value="1">13</option>
+                    <option value="1">14</option>
+                    <option value="1">15</option>
+                    <option value="1">16</option>
+                    <option value="1">17</option>
+                    <option value="1">18</option>
+                    <option value="1">19</option>
+                    <option value="1">20</option>
+                    <option value="1">21</option>
+                    <option value="1">22</option>
+                    <option value="1">23</option>
+                    <option value="1">24</option>
+                    <option value="1">25</option>
+                    <option value="1">26</option>
+                    <option value="1">27</option>
+                    <option value="1">28</option>
+                    <option value="1">29</option>
+                    <option value="1">30</option>
+                    <option value="1">31</option>
+                    
+                </select>
+            </div>
+                    <div>
+            <div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccione una hora</option>
+                    <option value="1">7:00 AM</option>
+                    <option value="2">7:30 AM</option>
+                    <option value="3">8:00 AM</option>
+                    <option value="3">8:30 AM</option>
+                    <option value="3">9:00 AM</option>
+                    <option value="3">9:30 AM</option>
+                    <option value="3">10:00 AM</option>
+                    <option value="3">10:30 AM</option>
+                    <option value="3">11:00 AM</option>
+                    <option value="3">11:30 AM</option>
+                    <option value="3">12:00 AM</option>
+                    <option value="3">12:30 AM</option>
+                </select>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
