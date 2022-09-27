@@ -11,5 +11,5 @@ package controller;
 public interface ICitaControlller {
     public String listar(boolean ordenar, String orden);
 
-    public String devolver(int id, String username);
+    
 }

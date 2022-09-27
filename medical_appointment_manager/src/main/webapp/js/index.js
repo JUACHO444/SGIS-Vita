@@ -32,7 +32,7 @@ function autenticarUsuario() {
             if (parsedResult != false) {
                 $("#login-error").addClass("d-none");
                 let username_paciente = parsedResult['username_paciente'];
-                document.location.href = "home.html?username_paciente=" + username_paciente;
+                document.location.href = "homep.html?username_paciente=" + username_paciente;
             } else {
                 $("#login-error").removeClass("d-none");
             }
@@ -73,7 +73,7 @@ function registrarUsuario() {
                 if (parsedResult != false) {
                     $("#register-error").addClass("d-none");
                     let username_paciente = parsedResult['username_paciente'];
-                    document.location.href = "home.html?username_paciente=" + username_paciente;
+                    document.location.href = "homep.html?username_paciente=" + username_paciente;
                 } else {
                     $("#register-error").removeClass("d-none");
                     $("#register-error").html("Error en el registro del usuario");
